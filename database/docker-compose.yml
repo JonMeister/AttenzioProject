@@ -1,0 +1,30 @@
+services:
+  postgres:
+    build:
+      context: . # Dockerfile path
+      dockerfile: Dockerfile # Dockerfile name
+    container_name: postgres_db  # Name the PostgreSQL container
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=jonmeister
+      - POSTGRES_PASSWORD=jonmeister
+      - POSTGRES_DB=attenzio_database # DB name
+      - postgres_data:/var/lib/postgresql/data # Volume for data persistence
+
+  pgadmin:
+    container_name: pgadmin_ui  # Name the pgAdmin container
+    restart: always
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin"
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
+
+volumes:
+  postgres_data:
+
