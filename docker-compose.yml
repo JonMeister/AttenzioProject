@@ -1,0 +1,36 @@
+
+services:
+  attenzio_database:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    env_file:
+      - ./database/.env
+    container_name: attenzio_database
+    ports:
+      - 5432:5432
+    networks:
+      - bst_network
+    volumes:
+      - ./database/volume:/var/lib/postgresql/data:rw
+  attenzio_backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./backend/.env
+    container_name: attenzio_backend
+    expose:
+      - 8000
+    ports:
+      - 8000:8000
+    networks:
+      - bst_network
+    depends_on:
+      - attenzio_database
+    links:
+      - attenzio_database:attenzio_database
+
+networks:
+  bst_network:
+    driver: bridge

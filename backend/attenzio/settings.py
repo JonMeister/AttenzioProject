@@ -92,14 +92,14 @@ WSGI_APPLICATION = 'attenzio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
+import os
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'attenzio_database',
         'USER': 'jonmeister',
         'PASSWORD': 'jonmeister',
-        'HOST': 'localhost',
+        'HOST': os.getenv('DATABASE_HOST', 'attenzio_database'),  # Service name as default
         'PORT': '5432',
     }
 }
