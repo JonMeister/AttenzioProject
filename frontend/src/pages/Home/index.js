@@ -16,8 +16,6 @@ const Home = () => {
             </li>
           </ul>
       </div>
-      <hr styles="width:100%"/>
-      
     </div>
   );
 };
