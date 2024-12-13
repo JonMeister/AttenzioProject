@@ -47,9 +47,12 @@ const Customer = () => {
   };
 
   return (
-    <div className="home-container">      
-      <div className="content">
-        
+    <div >      
+      <div className="login-header">
+        <h1 data-translate="loginTitle">Sign Up</h1>
+      </div>
+      <div class="home-container">
+      <div className="content">  
         <div className="form-container">
         <form onSubmit={handleSubmit} className="customer-form">
             <label htmlFor="name">Nombre:</label>
@@ -79,7 +82,7 @@ const Customer = () => {
               required
             />
             
-            <label htmlFor="address">Dirrección:</label>
+            <label htmlFor="address">Dirección:</label>
             <input
               id="address"
               value={address}
@@ -88,8 +91,8 @@ const Customer = () => {
             />
             
             <div style={{flexDirection: 'row'}}>
-              <button onClick={() => navigate(-1)}> Regresar </button> 
-              <button type="submit">Agregar + </button>
+              <button className="login-button" onClick={() => navigate(-1)}> Return </button> 
+              <button className="login-button" type="submit">Sign In </button>
             </div>
           </form>
         </div>
@@ -105,6 +108,8 @@ const Customer = () => {
           </ul>
         </div>
       </div>
+      </div>
+      
     </div>
   );
 };
