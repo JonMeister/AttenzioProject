@@ -14,18 +14,18 @@ h1 {
   width: 20%;
 }
 
-.customer-form {
+.user-form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.customer-form label {
+.user-form label {
   color:darkblue;
   margin: 8px 0px;
 }
 
-.customer-form input {
+.user-form input {
   padding: 4px;
   width: 100%!important;
   border-radius: 2pt;
@@ -33,7 +33,7 @@ h1 {
   border: 1px solid #ccc;
 }
 /*
-.customer-form button {
+.user-form button {
   border: none;
   text-decoration: none;
   color: white;
@@ -44,12 +44,12 @@ h1 {
   transition: background-color 0.3s;
   cursor: pointer;
 }
-.customer-form button:last-child {
+.user-form button:last-child {
   margin: 8px 2px;
   background-color: darkgreen;
 }
 
-.customer-form button:hover {
+.user-form button:hover {
   background-color: white;
   color: blue;
 }
@@ -60,4 +60,26 @@ h1 {
   /* border-radius: 2pt;
   background-color: #f9f9f9;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.089); */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* Espacio entre los botones */
+  margin-top: 1rem; /* Espacio superior opcional */
+}
+
+.login-button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #f9a825; /* Color de fondo */
+  color: white; /* Color de texto */
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #d17a00; /* Color al pasar el mouse */
 }

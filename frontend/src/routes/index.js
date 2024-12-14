@@ -2,7 +2,7 @@ import {
   Routes, Route, BrowserRouter as Router
 } from 'react-router-dom';
 
-import { Home, Customer } from '../pages';
+import { Home, User } from '../pages';
 
 const Approutes = () => {
   return (
@@ -10,7 +10,7 @@ const Approutes = () => {
       <Router>
           <Routes>
             <Route path="/" element={<Home/>}></Route>
-            <Route path="/customer" element={<Customer/>}></Route>
+            <Route path="/user" element={<User/>}></Route>
           </Routes>
       </Router>
     </div>

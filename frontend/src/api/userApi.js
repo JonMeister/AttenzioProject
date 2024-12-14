@@ -1,20 +1,20 @@
 import axios from 'axios';
 
-const API_URL = "http://localhost:8000/customer/"
+const API_URL = "http://localhost:8000/user/"
 
-export const fetchCustomer = async () => {
+export const fetchUser = async () => {
   try {
     const response = await axios.get(API_URL);
     return response.data;
   } catch (error) {
-    console.error("Error fetching customers:", error);
+    console.error("Error fetching users:", error);
     throw error;
   }
 };
 
-export const createCustomer = async (customerData) => {
+export const createUser = async (userData) => {
   try {
-    const response = await axios.post(API_URL, customerData);
+    const response = await axios.post(API_URL, userData);
     return response.data; 
   } catch (error) {
     console.error("Error creating bus:", error);

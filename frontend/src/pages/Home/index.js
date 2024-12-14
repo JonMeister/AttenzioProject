@@ -87,7 +87,7 @@ const Home = () => {
 
       <div className="signup-prompt">
         <span data-translate="noAccount">Don't have an account? </span>
-        <Link to="/customer" className="signup-prompt-link">Sign Up</Link>
+        <Link to="/user" className="signup-prompt-link">Sign Up</Link>
       </div>
 
       <div className="app-stores">
