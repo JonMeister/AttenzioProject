@@ -13,6 +13,11 @@ services:
       - bst_network
     volumes:
       - ./database/volume:/var/lib/postgresql/data:rw
+    healthcheck:
+      test: ["CMD-SHELL", "PGPASSWORD=jonmeister pg_isready -U jonmeister -d attenzio_database -h attenzio_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 2
   attenzio_backend:
     build:
       context: ./backend
@@ -27,7 +32,8 @@ services:
     networks:
       - bst_network
     depends_on:
-      - attenzio_database
+      attenzio_database:
+        condition: service_healthy
     links:
       - attenzio_database:attenzio_database
 
